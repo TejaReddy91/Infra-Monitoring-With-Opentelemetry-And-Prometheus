@@ -10,7 +10,7 @@ logging.basicConfig(
     format="%(asctime)s | %(levelname)s | %(name)s | %(message)s")
 logger = logging.getLogger("OpenTelemetryService")
 
-TAG_ENABLED_KEY='LSQ:OpenTelemetry:Status'
+TAG_ENABLED_KEY='OpenTelemetry:Status'
 TAG_ENABLED_VALUES={
     "Available":"1",    # Pick for processing
     "Success":"2",      # Successful
@@ -125,7 +125,7 @@ def validateInstanceStatus(instanceId):
 
 def validateTagsForOTel(resourceTags):
     isValid=resourceTags.keys()>={
-        "LSQ:OpenTelemetry:Status"
+        "OpenTelemetry:Status"
         }
     return isValid
 
